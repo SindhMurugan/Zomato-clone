@@ -1,0 +1,12 @@
+.card{
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    overflow: hidden;
+}
+
+/* .card-title{
+    width: 200px; 
+    white-space: nowrap; 
+    text-overflow: ellipsis; 
+    overflow: hidden;
+} */

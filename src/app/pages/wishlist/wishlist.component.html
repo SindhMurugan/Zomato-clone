@@ -1,0 +1,53 @@
+<div  style="height: fit-content;" >
+      <app-bread-cramps></app-bread-cramps>
+@if (getKeys.length > 0) {
+    <div style="padding-bottom: 6rem;width: 70rem;" class="m-auto overflow-auto">
+
+            @for (item of getKeys; track $index) {
+        <div class=" card my-2 " style="width: 100%;height: 18rem;">
+            <img [src]="item.photoUrl" class="card-img-top rounded p-3" style="height: 70%;">
+            <div class="card-body p-2 d-flex flex-column p-3 justify-content-between" style="height: 70%;">
+                <div >
+                    <h6 class="card-title">{{item.categoryName}}</h6>
+                    <p class="card-text " style="color: #0000008f;" appCustomDirective>{{item.description}}</p>
+                   
+                        <p class="text-danger fw-bold">{{item.price |currency}}</p>
+                </div>
+               
+                   
+                <div>
+                     <button class="btn btn-outline-success mx-3" style="width: 100px">{{getValues(item)}}</button>
+                <button class="btn btn-outline-danger" style="width: 100px" (click)="removeItem(item)">Remove</button>
+                </div>
+               
+             
+             
+            </div>
+          </div>
+    }
+</div>
+
+
+<div class=" d-flex justify-content-center shadow-lg position-fixed py-4 bg-white" style="bottom: 0;width: 100%;z-index:1">
+ 
+        <span class="fs-5 px-3">Total:</span>
+        <span class="text-danger fw-bold fs-5 ">{{totalPrice|currency}}</span>
+        <button class="btn btn-warning position-absolute mx-4" style="right: 0px;" (click)="pleaseOrder()">Please order </button>
+   
+   
+</div>
+}
+
+@else {
+    <div class="m-auto overflow-auto" style="padding-left: 40em;">
+        <img src="./assets/oops.webp" alt="" style="width: 250px;">
+        <p style="font-size: 24px;" class="pt-3 ms-5">Card is Empty...</p>
+
+    </div>
+}
+
+
+    </div>
+
+
+

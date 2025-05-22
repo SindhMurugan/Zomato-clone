@@ -1,0 +1,10 @@
+    <nav aria-label="breadcrumb" style="padding-left: 11rem;" class="pt-4" >
+        <ol class="breadcrumb p-3">
+            @for (item of breadCramps; track $index) {
+          <li class="breadcrumb-item active" (click)="NavigateToPage(item)" style="cursor: pointer;">{{item | titlecase}}</li>
+          <!-- <li class="breadcrumb-item active" aria-current="page">All Produces</li>
+           <li class="breadcrumb-item active" aria-current="page">Selected Item</li>
+           <li class="breadcrumb-item active" aria-current="page">WishList</li> -->
+            }
+        </ol>
+      </nav>

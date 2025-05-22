@@ -1,0 +1,90 @@
+<div>
+
+  
+<!--    
+    <nav aria-label="breadcrumb" style="padding-left: 11rem;" class="pt-4" >
+        <ol class="breadcrumb p-3">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">All Produces</li>
+        </ol>
+      </nav> -->
+
+      <app-bread-cramps></app-bread-cramps>
+
+      <div class="container-fluid  mb-5 mt-3 py-4 px-2 " style="height:fit-content;background-color: #ea868f14;">
+        <!-- <div style="width: 80rem;" class="m-auto"> -->
+          <h3 style="padding-left: 11rem;" class="fs-2">Inspiration for your first order</h3>
+          <section class="d-flex justify-content-center my-4">
+            <!-- <div class="rounded-circle overflow-hidden  mx-4 d-flex flex-column align-items-center" style="height: 150px;width: 150px;">
+              <img src="./assets/pizza.avif" alt="" height="150px" width="150px">
+              <span class="fw-bold">Pizza</span>
+            </div> -->
+
+            <div class="  mx-4 d-flex flex-column align-items-center" >
+              <div class="rounded-circle overflow-hidden" style="height: 150px;width: 150px;">
+                <img src="./assets/pizza.avif" alt="" height="150px" width="150px">
+              </div>
+             
+              <span class="fw-bold fs-5 py-1" style=color:#0000007d>Pizza</span>
+            </div>
+            <div class=" mx-4 d-flex flex-column align-items-center">
+              <img src="./assets/cake.avif" alt="" height="150px" width="150px">
+              <span class="fw-bold fs-5 py-1" style=color:#0000007d>Cake</span>
+            </div>
+            <div class=" mx-4 d-flex flex-column align-items-center">
+              <img src="./assets/burger.avif" alt="" height="150px" width="150px">
+              <span class="fw-bold fs-5 py-1" style=color:#0000007d>Burger</span>
+            </div>
+            <div class=" mx-4 d-flex flex-column align-items-center">
+              <img src="./assets/briyani.avif" alt="" height="150px" width="150px">
+              <span class="fw-bold fs-5 py-1" style=color:#0000007d>Briyani</span>
+            </div>
+            <div class=" mx-4 d-flex flex-column align-items-center">
+              <img src="./assets/chicken.avif" alt="" height="150px" width="150px">
+              <span class="fw-bold fs-5 py-1" style=color:#0000007d>chicken</span>
+            </div>
+            <div class="  mx-4 d-flex flex-column align-items-center" >
+              <div class="rounded-circle overflow-hidden" style="height: 150px;width: 150px;">
+                <img src="./assets/north-india.avif" alt="" height="150px" width="150px">
+              </div>
+             
+              <span class="fw-bold fs-5 py-1" style=color:#0000007d>North India</span>
+            </div>
+          </section>
+        <!-- </div> -->
+        
+
+
+      </div>
+
+      <div class="d-flex flex-wrap justify-content-center">
+        @for (item of service.allTheproducts(); track $index) {
+            <div class=" cardItem m-2 position-relative rounded" style="width: 25rem;height: 15rem;overflow: hidden;"
+            [ngClass]="{ 'card shadow': isHovered == $index}"
+            (mouseenter)="isHovered = $index"
+            (mouseleave)="isHovered = -1"
+            (click)="goToDetailSection(item)">
+                <img [src]="item.photoUrl" class="card-img-top rounded" style="height: 70%;">
+                <div class="card-body p-2" style="height: 30%;">
+                  <h6 class="card-title">{{item.categoryName}}</h6>
+                  <div class="row" style="color: #0000008f;">
+                    <p class="card-text col" style="text-overflow: ellipsis; white-space: nowrap; 
+                     
+                    overflow: hidden;">{{item.description}}</p>
+                   
+                        <p class="col-3">{{item.price |currency}}</p>
+                    </div>
+                    
+                
+                 
+                 
+                </div>
+              </div>
+        }
+    </div>
+</div>
+
+
+
+  
+

@@ -1,0 +1,75 @@
+<div style="width: 70%;" class="m-auto">
+
+   
+    <div >
+
+       
+       
+        <!-- <nav aria-label="breadcrumb"  class="pt-4" >
+            <ol class="breadcrumb p-3">
+              <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page"><a routerLink="/zomato/">All Productes</a></li>
+              <li class="breadcrumb-item active" aria-current="page">{{service.selectedItem().menuItemName}}</li>
+            </ol>
+          </nav> -->
+    
+          <div class="container" >
+           
+
+            <section>
+                  <app-bread-cramps></app-bread-cramps>
+                <h1>{{service.selectedItem().menuItemName}}</h1>
+                <span class="text-secondary">{{service.selectedItem().description}}</span>
+                <address><i class="bi bi-buildings pe-2 fs-4"></i>{{service.selectedItem().restaurantName}}</address>
+                <div class="border rounded-pill py-1 px-2" style="width: fit-content;"> 
+                    <span class="text-warning">Open now1pm </span>- 11:30pm (Today)
+                    <i class="bi bi-info-circle px-2"></i>
+                    </div>
+              
+    
+                <div class="pt-3">
+                    <button class="btn btn-outline-secondary mx-1">Direction</button>
+                    <button class="btn btn-outline-secondary mx-2"><i class="bi bi-share text-danger pe-2"></i>Share</button>
+                    <button class="btn btn-outline-secondary mx-1"><i class="bi bi-chat-square-dots text-danger pe-2"></i>Reviews</button>
+                </div>
+            </section>
+
+            <div class="pt-3 row">
+                <div class="col-9">
+                    <button class="btn text-success border shadow-sm " (click)="openSnackBar(service.selectedItem())">Add to Card</button>
+                </div>
+                <div class="col ps-5">
+                    <i  style="font-size: 30px;" (click)="itemLikedByuser = !itemLikedByuser" 
+                    [ngClass]="itemLikedByuser ? 'bi bi-heart-fill text-danger ':'bi bi-heart'"
+                    ></i>
+                </div>
+               
+                   
+                
+                
+                  
+              
+                
+                <!-- <button class="btn">Buy Now</button> -->
+            </div>
+       
+    
+          
+    
+          
+                <div style="height:400px;width: 900px;" class="overflow-hidden my-3 ">
+                    <img [src]="service.selectedItem().photoUrl" alt="" height="500px" width="900px"  class="selectedItemImg">
+                </div>
+
+              
+    
+            
+    
+          </div>
+    
+    </div>
+   
+
+  
+</div>
+

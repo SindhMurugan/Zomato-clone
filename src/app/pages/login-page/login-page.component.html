@@ -1,0 +1,120 @@
+
+    <!-- @if (data.signUp) {
+     
+    
+    }
+    @else {
+      
+    
+    } -->
+
+    @switch (data.signUp) {
+        @case ('signUp') {
+            <div class="card overflow-hidden">
+                <div class="card-header row">
+                    <h5 class="text-center col-10 pt-1">Sign Up</h5>
+                    <h5 class="cancel-btn col" (click)="dialogRef.close()">
+                        &times;
+                    </h5>
+                    <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> -->
+                        <span aria-hidden="true " ></span>
+                      <!-- </button> -->
+                </div>
+                <div class="card-body p-3">
+                    <form action="" #addnewuserform="ngForm">
+                      <input type="text" placeholder="Full Name" class="form-control my-2" required name="fullName" [(ngModel)]="addNewUser.userName" #fullName="ngModel"
+                      [ngStyle]="{'border': fullName.touched && fullName.invalid ? '1px solid red' : '' }">
+                    
+                        <input type="email" placeholder="Email" class="form-control my-2" name="Email" [(ngModel)]="addNewUser.emailId" #Email="ngModel"
+                        [ngStyle]="{'border': Email.touched && Email.invalid ? '1px solid red' : '' }">
+                        <input type="text" placeholder="Phone No" class="form-control my-2" name="phnNo" [(ngModel)]="addNewUser.mobileNo" #phnNo="ngModel"
+                        [ngStyle]="{'border': phnNo.touched && phnNo.invalid ? '1px solid red' : '' }"> 
+                     
+                   
+                      <input type="text" placeholder="Role" class="form-control my-2" name="role" [(ngModel)]="addNewUser.role" #role="ngModel"
+                      [ngStyle]="{'border': role.touched && role.invalid ? '1px solid red' : '' }">
+                      <input type="text" placeholder="Password" class="form-control my-2" name="Password" [(ngModel)]="addNewUser.password" #Password="ngModel"
+                      [ngStyle]="{'border': Password.touched && Password.invalid ? '1px solid red' : '' }">
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn  text-white" [ngClass]="addnewuserform.valid ?'bg-danger':'bg-secondary'" [disabled]="!(addnewuserform.valid)"
+                    (click)="newUserAdded(addnewuserform)">Create Account</button>
+                </div>
+            </div>
+        }
+        @case ('login') {
+            <div class="card overflow-hidden">
+                <div class="card-header row">
+                    <h5 class="text-center col-10 pt-1">Sign In</h5>
+                    <h5 class="cancel-btn col" (click)="dialogRef.close()">
+                        &times;
+                    </h5>
+                   
+                </div>
+                <div class="card-body p-3">
+                    <form action="" #loginform="ngForm">
+                      <input type="text" placeholder="User Name" class="form-control my-2" required name="fullName" [(ngModel)]="logInExistingUser.userName" #fullName="ngModel"
+                      [ngStyle]="{'border': fullName.touched && fullName.invalid ? '1px solid red' : '' }">
+                    
+                      
+                      <input type="text" placeholder="Password" class="form-control my-2" name="Password" required  [(ngModel)]="logInExistingUser.password" #Password="ngModel"
+                      [ngStyle]="{'border': Password.touched && Password.invalid ? '1px solid red' : '' }">
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn  text-white" [ngClass]="loginform.valid ?'bg-danger':'bg-secondary'" [disabled]="!(loginform.valid)"
+                    (click)="userLoggedIn(loginform)">Log In</button>
+                </div>
+            </div>
+        }
+        @case ('edit') {
+            <div class="card overflow-hidden">
+                
+                <div class="card-header row ">
+                    <h5 class="text-center col-11 p-1">Edit Profile</h5>
+                    <h5 class="cancel-btn col" (click)="dialogRef.close()">
+                        &times;
+                    </h5>
+                   
+                
+                </div>
+
+                <div class="profile-section d-flex align-items-center text-white p-0">
+                    <div class="flex-grow-1 d-flex align-items-center px-3">
+                        <i class="bi bi-person-circle  " style="font-size:10rem"></i>
+                        <span class="px-4 pt-2">{{apiCallReq.storage().userName}}</span>
+                    </div>
+                    
+                  
+                </div>
+                <div class="card-body p-3">
+                    <form action="" #addnewuserform="ngForm">
+                      <input type="text" placeholder="Full Name" class="form-control my-2" required name="fullName" [(ngModel)]="addNewUser.userName" #fullName="ngModel"
+                      [ngStyle]="{'border': fullName.touched && fullName.invalid ? '1px solid red' : '' }">
+                    
+                        <input type="email" placeholder="Email" class="form-control my-2" name="Email" [(ngModel)]="addNewUser.emailId" #Email="ngModel"
+                        [ngStyle]="{'border': Email.touched && Email.invalid ? '1px solid red' : '' }" required>
+                        <input type="text" placeholder="Phone No" class="form-control my-2" name="phnNo" [(ngModel)]="addNewUser.mobileNo" #phnNo="ngModel"
+                        [ngStyle]="{'border': phnNo.touched && phnNo.invalid ? '1px solid red' : '' }" required> 
+                     
+                   
+                      <input type="text" placeholder="Role" class="form-control my-2" name="role" [(ngModel)]="addNewUser.role" #role="ngModel"
+                      [ngStyle]="{'border': role.touched && role.invalid ? '1px solid red' : '' }" required>
+                      <input type="text" placeholder="Password" class="form-control my-2" name="Password" [(ngModel)]="addNewUser.password" #Password="ngModel"
+                      [ngStyle]="{'border': Password.touched && Password.invalid ? '1px solid red' : '' }" required>
+                    </form>
+                </div>
+                <div class="card-footer text-center" >
+                    <button class="btn btn-outline-danger mx-2" 
+                    (click)="clearForm(addnewuserform)">Cancel</button>
+                    <button class="btn  text-white btn-danger mx-2"  
+                    (click)="updateUser(addnewuserform)">Update</button>
+                </div>
+            </div>
+        }
+    }
+    
+
+
+

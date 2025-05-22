@@ -1,0 +1,12 @@
+<div class="bg-white rounded  px-3 m-auto row" style="width:40rem;height: 3rem;">
+
+    <div class="col-1 d-flex align-items-center border-end"><i class="bi bi-pin-map text-danger" style="font-size: 18px;" (click)="findLocation()"></i></div>
+    <div class="col d-flex align-items-center">
+        <i class="bi bi-search" style="width: 30px;height: 25px"></i>
+
+    <input type="text"  placeholder="Search for restaurants ,cuision or a food"
+    class="border-0 w-100" (keyup)="searchItem($event)">
+    </div>
+    
+    
+</div>

@@ -1,0 +1,26 @@
+/* .profile-card{
+    display: grid;
+    grid-template-columns: 320px 570px 320px;
+    
+}
+
+.profile-sec-container{
+    grid-column: 2 /span 2;
+}*/
+.profile-section{
+   
+    height: 13rem;
+    background-color: brown;
+} 
+.card-body{
+    cursor: pointer;
+}
+
+.address-card:hover{
+    background-color: #ea868f14;
+}
+
+.order-list{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}

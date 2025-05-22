@@ -1,0 +1,31 @@
+<!-- @if (data == "address") { -->
+    <div class="overflow-hidden">
+
+        <!-- @if (data == 'wish') { -->
+            <div class="text-center d-flex flex-column py-2">
+                <div class="row">
+                    <span class="fs-5 fs-bold col-10">Order placed</span>
+                    <h5 class="cancel-btn col" (click)="dialogRef.close()">
+                        &times;
+                    </h5>
+                </div>
+               
+                <span class="fs-6">We will delivery your order in below location</span> 
+            </div>
+            
+        <!-- } -->
+      
+        <div id="map" style="width: 100%; height: 625px"></div>
+        <!-- <div class="text-center py-3"> -->
+            <!-- <span class="fs-6">Set your delivery location</span> -->
+            <!-- @if (data == "address") {
+                <button class="btn btn-warning mx-1" (click)="enableLocation()">Enable your location</button>
+                <button class="btn btn-danger mx-1">Confirm and Proceed</button>
+            } -->
+            
+        <!-- </div> -->
+       
+    </div>
+
+
+

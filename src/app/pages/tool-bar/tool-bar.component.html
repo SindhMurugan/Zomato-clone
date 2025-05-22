@@ -1,0 +1,57 @@
+<div class=" m-auto d-flex justify-content-center shadow py-4 ">
+    <!-- @if (service.storage()){
+        
+    } -->
+    <span class="fs-1">Zomato</span>
+    <div class="border rounded mx-5">
+        <app-search-bar></app-search-bar>
+    </div>
+    
+
+    <div class="row"><i class="bi bi-cart-plus text-secondary col" style="font-size:30px" (click)="showCardItems()"
+         routerLink="/zomato/wishlist" [queryParams]="{active:['Home' , 'Products' , 'Selected Item' , 'WishList']}"></i>
+        <div class="col text-center text-white d-flex align-items-center position-relative rounded-circle " 
+        style="height:20px;width: 20px;background-color:red;left:-25px">
+      
+            <span    [matBadge]="getCradItem.length" class="pb-2 ps-1 fw-semibold"
+            ></span></div>
+        </div>
+
+    @if (service.storage()) {
+        <!-- <span class="mx-3 fontSize" (click)="LogOut()">Log Out</span> -->
+
+        <div>
+            <i class="bi bi-person-circle text-secondary " style="font-size:30px"></i>
+            <span class="px-2 pt-2">{{service.storage().userName}}</span>
+            <i class="bi bi-chevron-down" (click)="proficeSection = !proficeSection"></i>
+        </div>
+        
+    }
+    @else {
+        <span class="mx-3 fontSize" (click)="openSignUp('login')">Log in</span>
+        <span class="mx-3 fontSize" (click)="openSignUp('signUp')"> Sign up</span>
+    }
+
+   
+        <!-- <div></div> -->
+            
+       
+        
+   
+   
+</div>
+
+
+
+
+@if (proficeSection) {
+    <div class="card position-absolute" style="width: fit-content;right:18rem ;z-index:1" >
+        <ul style="cursor: pointer;list-style: none;" class="pe-5 py-2">
+            <li class="py-1" [routerLink]="['/zomato/user' , service.storage().userName]" (click)="proficeSection = !proficeSection">Profile</li>
+            <li class="py-1">settings</li>
+            <li class="py-1" (click)="loggedOut()">Log out</li>
+        </ul>
+    </div>
+    
+} 
+

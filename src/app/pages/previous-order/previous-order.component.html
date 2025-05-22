@@ -1,0 +1,13 @@
+<div>
+    @for (item of getAllOrdersList; track $index) {
+        <div class="card">
+            <div class="card-body">
+                <span>{{item.restaurantName}}</span>
+                <span>{{item.orderDate}}</span>
+                <span>Paid:{{item.totalAmount}}</span>
+            </div>
+
+        </div>
+    }
+</div>
+

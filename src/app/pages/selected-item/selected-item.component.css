@@ -1,0 +1,15 @@
+.selectedItemImg{
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.selectedItemImg:hover{
+    transform: scale(1.1);
+
+}
+
+:root{
+    .notification-error{
+        background-color: black;
+    }
+}
